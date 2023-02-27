@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='login.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+      <form class="form-login" method="POST" action="/login">
+        <h2 class="form-login-heading">Welcome Back!</h2>
+        <p style="display:{{ display }}" class="invalid_msg"> Invalid username or password </p>
+
+        <!--login form goes here-->
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="signup_text"> New Here? <a href="{{ signup }}">Create An Account</a></p>
+      </form>
+
+    </div>
+{% endblock %}
